@@ -73,7 +73,7 @@ class Main extends PluginBase implements Listener {
 			});
 			$form->setTitle("/Nick");
 			if($this->nickcfg->exists($sender->getName())){
-			$form->setContent(".§eYour nickname is " . $this->nickcfg->getNested($sender->getName() . ".custom name"));
+			$form->setContent(".Click on change nickname to change your nickname or reset nickname to reset it\n\n§eYour nickname is " . $this->nickcfg->getNested($sender->getName() . ".custom name"));
 			}
 			if(!$this->nickcfg->exists($sender->getName())){
 			$form->setContent("§7Click on change nickname to change your nickname or reset nickname to reset it. ");
