@@ -104,7 +104,7 @@ class Main extends PluginBase implements Listener {
 				}
 		});
 		$form->setTitle("/nick");
-		$form->addInput("§7Please Note: Any inappropriate names you will be banned for!\n§7You can use colors by using §");
+		$form->addInput("§7Please Note: Any inappropriate names you will be banned for!\n§7You can use colors by using §\n\n§6> §7Nickname");
 		$form->sendToPlayer($player);
 		return $form;
 	}
