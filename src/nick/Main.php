@@ -57,7 +57,7 @@ class Main extends PluginBase implements Listener {
 					break;
 					case 1;
 					if(!$this->nickcfg->exists($player->getName())){
-						$player->sendMessage("§cSorry! But you cannot change your name, because your name is already normal");
+						$player->sendMessage("§cSorry! Your nickname is already reset");
 						return true;
 					}
 					if($this->nickcfg->exists($player->getName())){
@@ -104,7 +104,7 @@ class Main extends PluginBase implements Listener {
 				}
 		});
 		$form->setTitle("/nick");
-		$form->addInput("§7Please Note: Any inappropriate names you will be banned for!\n§7You can use colors by using §\n\n§6> §7Nickname");
+		$form->addInput("§7Please Note: Any inappropriate names you will be banned for!\n§7You can use colors by using § \n\n§6> §7Nickname");
 		$form->sendToPlayer($player);
 		return $form;
 	}
