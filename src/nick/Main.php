@@ -65,21 +65,21 @@ class Main extends PluginBase implements Listener {
 						$player->setDisplayName($this->nickcfg->getNested($player->getName() . ".normal name"));
 						$this->nickcfg->remove($player->getName());
 						$this->nickcfg->save();
-						$player->sendMessage("§6Your name is now normal");
+						$player->sendMessage("§6Your nickname has been reset");
 						return true;
 					}
 					break;
 				}
 			});
-			$form->setTitle("§3Nick");
+			$form->setTitle("/Nick");
 			if($this->nickcfg->exists($sender->getName())){
-			$form->setContent("§aChange your nickname.\n§eYour nickname is " . $this->nickcfg->getNested($sender->getName() . ".custom name"));
+			$form->setContent(".§eYour nickname is " . $this->nickcfg->getNested($sender->getName() . ".custom name"));
 			}
 			if(!$this->nickcfg->exists($sender->getName())){
-			$form->setContent("§aChange your nickname.\n\n§6You don't have §l§cany §r§6nicknames.");
+			$form->setContent("§7Click on change nickname to change your nickname or reset nickname to reset it. ");
 			}
-			$form->addButton("§eChange Nickname");
-			$form->addButton("§eChange to normal");
+			$form->addButton("§aChange Nickname");
+			$form->addButton("§cReset Nickname");
 			$form->sendToPlayer($sender);
 			break;
 		}
@@ -99,12 +99,12 @@ class Main extends PluginBase implements Listener {
 					$this->nickcfg->save();
 					$player->setDisplayName($this->nickcfg->getNested($player->getName() . ".custom name"));
 					$player->setNameTag($this->nickcfg->getNested($player->getName() . ".custom name"));
-					$player->sendMessage("§eYour name is now §c" . $this->nickcfg->getNested($player->getName() . ".custom name"). "§e!");
+					$player->sendMessage("§6Your name is now §a" . $this->nickcfg->getNested($player->getName() . ".custom name"). "§e!");
 					return true;
 				}
 		});
-		$form->setTitle("§3Nick - Change");
-		$form->addInput("§3Here you can type your custom nickname:");
+		$form->setTitle("/nick");
+		$form->addInput("§7Please Note: Any inappropriate names you will be banned for!\n§7You can use colors by using §");
 		$form->sendToPlayer($player);
 		return $form;
 	}
